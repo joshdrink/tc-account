@@ -249,13 +249,13 @@
         </div>
     </div>
 
-    <div data-c-dialog-overlay></div>
+    <div data-c-dialog-overlay="active"></div>
 
     <div
-        aria-hidden="true"
+        aria-hidden="false"
         aria-describedby="example-dialog-01-description"
         aria-labelledby="example-dialog-01-title"
-        data-c-dialog
+        data-c-dialog="active--contained"
         data-c-dialog-id="example-dialog-01"
         data-c-padding="top(double) bottom(double)"
         role="dialog">
@@ -285,46 +285,29 @@
                 data-c-border="bottom(thin, solid, black)"
                 data-c-padding="normal">
                 <div id="example-dialog-01-description">
-                    <p data-c-margin="bottom(normal)">You're about to turn 2-factor authentication on for your account. Please download an app such as Google Authenticator or Authy and scan the QR code below. The following recovery codes can also be used to sign into your account once, which will then render that specific code void. Please keep these codes stored in a safe place.</p>
-                    <div data-c-grid="gutter middle">
-                        <div data-c-grid-item="tp(1of2)" data-c-align="base(center)">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/220px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="">
+                    <p data-c-margin="bottom(normal)">Please enter the one-time password shown on your application:</p>
+                    <div data-c-input="number">
+                        <label for="NUM2">One-time Password</label>
+                        <span>Required</span>
+                        <div>
+                            <input id="NUM2" placeholder="0" required type="number" value="123456" />
                         </div>
-                        <div data-c-grid-item="tp(1of2)">
-                            <p data-c-margin="bottom(half)">Recovery Codes:</p>
-                            <ul data-c-margin="bottom(normal)">
-                                <li>12345-12345-12345</li>
-                                <li>12345-12345-12345</li>
-                                <li>12345-12345-12345</li>
-                                <li>12345-12345-12345</li>
-                                <li>12345-12345-12345</li>
-                                <li>12345-12345-12345</li>
-                            </ul>
-                        </div>
+                        <span>This input has an error.</span>
                     </div>
                 </div>
             </div>
             <!-- The following dialog actions can be customized depending on the dialog. -->
             <div data-c-padding="normal">
                 <div data-c-grid="gutter middle">
-                    <div data-c-grid-item="base(1of2)">
-                        <button
-                            data-c-button="outline(slow)"
-                            data-c-radius="rounded"
-                            data-c-dialog-action="close"
-                            data-c-dialog-id="example-dialog-01">
-                            Cancel
-                        </button>
-                    </div>
                     <div
-                        data-c-grid-item="base(1of2)"
+                        data-c-grid-item="base(1of1)"
                         data-c-alignment="base(right)">
                         <a
                             data-c-button="solid(go)"
                             data-c-radius="rounded"
                             title=""
-                            href="/auth-interim.html#auth">
-                            Turn On
+                            href="/auth-on.html#auth">
+                            Submit
                         </a>
                     </div>
                 </div>

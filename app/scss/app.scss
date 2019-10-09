@@ -4,33 +4,131 @@
 // Clone Theme Variables
 // All available theme variables can be found at https://github.com/joshdrink/clone-framework/blob/master/app/scss/core/_defaults.scss
 
+// Clone: Talent Cloud Edition =================================================
+
+// Layout Variables
+$clone-large-layout: 100rem;
+$clone-medium-layout: 60rem;
+$clone-small-layout: 39rem;
+
+// Whitespace Variables
+// On Portrait Phone Devices, Media Queries exist at Tablet Landscape, and Desktop Large and are generated using the multiplier below.
+$clone-margin: 1rem;
+$clone-padding: 1rem;
+$clone-whitespace-multiplier: 1.4;
+
+// Grid Variables
+$clone-grid-columns: 12;
+$clone-grid-gutter: $clone-padding;
+
+// Main Colour Variables
+
+    // Black & White
+    $clone-white: #FFFFFF;
+    $clone-black: rgba(20, 20, 35, 1);
+
+    // gray/Gray
+    $clone-gray: rgba(150, 150, 150, 1);
+
+    // Theme Colours
+    $clone-c1: #5b1647;
+    $clone-c2: #96043e;
+    $clone-c3: #c90035;
+    $clone-c4: #0a6cbc;
+    $clone-c5: #0a6cbc;
+
+    // Go, Slow, Stop
+    $clone-go: green;
+    $clone-slow: orange;
+    $clone-stop: red;
+    $clone-error: $clone-stop;
+
+// Sitewide Colour Variables
+
+    // Text Selection
+    $clone-selection-background-colour: $clone-c5;
+
+    // Hover
+    $clone-hover-colour: $clone-c5;
+
+    // Focus
+    $clone-focus-colour: $clone-hover-colour;
+
+    // Visited Links
+    $clone-visited-colour: temp;
+
+// Component Options
+
+    // Cards
+    $clone-card-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+
+// Component Colour Variables
+
+    // Accordions
+    $clone-accordion-border-colour: $clone-black;
+    $clone-accordion-alternating-background-colour: lighten($clone-gray, 35%);
+
+    // Alerts
+    $clone-alert-information: $clone-c1;
+    $clone-alert-warning: $clone-slow;
+    $clone-alert-error: $clone-stop;
+
+    // Blockquotes
+    $clone-blockquote-colour: $clone-c1;
+
+    // Carousels
+    $clone-carousel-dot-colour: $clone-c1;
+    $clone-carousel-dot-active-colour: $clone-c3;
+
+    // Code Blocks
+    $clone-code-background: $clone-black;
+
+    // Menus
+    $clone-menu-background-colour: $clone-black;
+    $clone-submenu-background-colour: $clone-c2;
+
+    $clone-menu-font-colour: $clone-white;
+    $clone-menu-divider-colour: rgba($clone-c3, .5);
+    $clone-menu-icon-colour: $clone-white;
+
+    // Pullquotes
+    $clone-pullquote-colour: $clone-c2;
+
+    // Tables
+    $clone-table-heading-colour: $clone-c1;
+    $clone-table-alternating-colour: rgba(0, 0, 0, .1); // Note that this transparency allows for a checker pattern on the grid when there is a vertical heading column,.
+
+// Font Variables
+
+    // Fonts
+    $clone-font-sans: "Open Sans", sans-serif;
+    $clone-font-serif: serif;
+    $clone-font-script: "Euphoria Script", cursive;
+    $clone-font-monospace: "Consolas", monospace;
+
+    $clone-font-default: $clone-font-sans;
+
+    // Default Line Height
+    $clone-line-height: 1.5;
+
+    // The Typography Scale
+    $clone-default-font-size: 1rem;
+    $clone-font-scale: 1.250;
+
 // Include Clone
 @import "../../node_modules/clone-framework/app/scss/clone";
 
 [data-clone] {
     // Your custom CSS goes here.
-    .pg-hero {
-        align-items: center;
-        display: flex;
-        height: 100vh;
-        justify-content: center;
+    .sidebar-wrapper {
         position: relative;
-        width: 100vw;
-        >div {
-            width: 90%;
-            @media #{$clone-tablet-landscape} {
-                width: 50%;
-            }
-            .pg-alert {
-                background: #f14948;
-                background: -moz-linear-gradient(45deg, #f14948 0%, #f7af5b 100%);
-                background: -webkit-linear-gradient(45deg, #f14948 0%,#f7af5b 100%);
-                background: linear-gradient(45deg, #f14948 0%,#f7af5b 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f14948', endColorstr='#f7af5b',GradientType=1 );
-                a {
-                    color: $clone-white;
-                }
-            }
+    }
+    .sidebar {
+        position: sticky;
+        top: 0;
+        ul {
+            list-style: none;
+            padding: 0;
         }
     }
 }

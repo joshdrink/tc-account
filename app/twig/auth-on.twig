@@ -1,0 +1,152 @@
+{% extends "templates/layout.twig" %}
+
+{% block auth %}
+    <div data-c-grid="gutter middle">
+        <div data-c-grid-item="tp(1of2)" data-c-align="base(center) tp(left)">
+            <p data-c-font-size="h4" data-c-font-weight="bold">2-factor Status: <span data-c-color="go">ON</span></p>
+        </div>
+        <div data-c-grid-item="tp(1of2)" data-c-align="base(center) tp(right)">
+            <button data-c-button="outline(c3)" data-c-radius="rounded" data-c-dialog-id="example-dialog-01" data-c-dialog-action="open" type="button">
+                Turn 2-factor Off
+            </button>
+        </div>
+        <div data-c-grid-item="base(1of1)">
+            <div data-c-accordion-group data-c-margin="top(normal)">
+                <div
+                    data-c-accordion
+                    data-c-background="white(100)"
+                    data-c-radius="rounded">
+                    <button
+                        data-c-background="c1(100)"
+                        aria-expanded="false"
+                        data-c-accordion-trigger
+                        tabindex="0"
+                        type="button">
+                        <div data-c-padding="top(normal) right bottom(normal) left(normal)">
+                            <p data-c-heading="h4" data-c-font-weight="bold" data-c-color="white">
+                                View my recovery codes...
+                            </p>
+                        </div>
+                        <span data-c-visibility="invisible">
+                            Click to view...
+                        </span>
+                        <i
+                            aria-hidden="true"
+                            class="material-icons"
+                            data-c-accordion-add
+                            data-c-colour="white">
+                            add_circle
+                        </i>
+                        <i
+                            aria-hidden="true"
+                            class="material-icons"
+                            data-c-accordion-remove
+                            data-c-colour="white">
+                            remove_circle
+                        </i>
+                    </button>
+                    <div
+                        aria-hidden="true"
+                        data-c-accordion-content
+                        data-c-padding="right(normal) left(normal)"
+                        data-c-background="gray(10)">
+                        <div data-c-padding="bottom(normal)">
+                            <ul data-c-padding="top(normal)">
+                                <li>12345-12345-12345</li>
+                                <li>12345-12345-12345</li>
+                                <li>12345-12345-12345</li>
+                                <li>12345-12345-12345</li>
+                                <li>12345-12345-12345</li>
+                                <li>12345-12345-12345</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-c-dialog-overlay></div>
+
+    <div
+        aria-hidden="true"
+        aria-describedby="example-dialog-01-description"
+        aria-labelledby="example-dialog-01-title"
+        data-c-dialog
+        data-c-dialog-id="example-dialog-01"
+        data-c-padding="top(double) bottom(double)"
+        role="dialog">
+        <div
+            data-c-background="white(100)"
+            data-c-radius="rounded">
+            <div
+                data-c-padding="tb(normal) right(triple) left(normal)"
+                data-c-border="bottom(thin, solid, black)"
+                data-c-background="c1(100)">
+                <h5
+                    data-c-font-size="h4"
+                    id="example-dialog-01-title"
+                    data-c-dialog-focus
+                    data-c-color="white">
+                    Turn 2-factor Authentication Off
+                </h5>
+                <button
+                    data-c-dialog-action="close"
+                    data-c-dialog-id="example-dialog-01"
+                    type="button"
+                    data-c-color="white">
+                    <i class="material-icons">close</i>
+                </button>
+            </div>
+            <div
+                data-c-border="bottom(thin, solid, black)"
+                data-c-padding="normal">
+                <div id="example-dialog-01-description">
+                    <p data-c-margin="bottom(normal)">Are you sure you want to turn 2-factor authentication off? This will remove it from your account and it will need to be re-enabled to continue protecting your account. If you'd like to remove it, please enter your password and click Remove.</p>
+                    <div data-c-input="password">
+                        <label for="p2">My Password</label>
+                        <span>Required</span>
+                        <div>
+                            <input id="p2" required type="password" value="G1assesAreTheBestDisguise" />
+                            <button type="button">
+                                <i class="material-icons">
+                                    visibility
+                                </i>
+                                <i class="material-icons">
+                                    visibility_off
+                                </i>
+                            </button>
+                        </div>
+                        <span>This input has an error.</span>
+                    </div>
+                </div>
+            </div>
+            <!-- The following dialog actions can be customized depending on the dialog. -->
+            <div data-c-padding="normal">
+                <div data-c-grid="gutter middle">
+                    <div data-c-grid-item="base(1of2)">
+                        <button
+                            data-c-button="outline(slow)"
+                            data-c-radius="rounded"
+                            data-c-dialog-action="close"
+                            data-c-dialog-id="example-dialog-01">
+                            Cancel
+                        </button>
+                    </div>
+                    <div
+                        data-c-grid-item="base(1of2)"
+                        data-c-alignment="base(right)">
+                        <a
+                            data-c-button="solid(stop)"
+                            data-c-radius="rounded"
+                            title=""
+                            href="/#auth">
+                            Remove
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
