@@ -1,41 +1,20 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
     <head>
-
         
-        <title>Clone: Playground</title>
+        <title>Talent Cloud: My Account</title>
         
+        <meta charset="utf-8"/>
         
-        <meta charset="utf-8" />
-
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
-        <meta
-            http-equiv="X-UA-Compatible"
-            content="IE=edge">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0">
-
+        <link href="https://fonts.googleapis.com/css?family=Euphoria+Script|Open+Sans:400,400i,600,600i,800,800i&amp;subset=latin-ext" rel="stylesheet">
         
-        <link
-            href="https://fonts.googleapis.com/css?family=Euphoria+Script|Open+Sans:400,400i,600,600i,800,800i&amp;subset=latin-ext"
-            rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
-        <link
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet">
-
-        
-        <link 
-            async 
-            href="css/app.css"
-            rel="stylesheet">
-
+        <link async href="css/app.css" rel="stylesheet">
         
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -44,26 +23,19 @@
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
         <meta name="msapplication-TileColor" content="#b91d47">
         <meta name="theme-color" content="#b91d47">
-
     </head>
-
     
     <body data-clone>
-
         <header class="hero" data-c-overlay="black(90)" data-c-padding="tb(triple)" style="background-image: url('https://images.unsplash.com/photo-1570005435342-7541f89273e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');">
             <div data-c-container="large">
                 <h1 class="logotype" data-c-font-size="h1" data-c-font-weight="600" data-c-color="white" data-c-margin="bottom(double)">
                     My Account
                 </h1>
                 <div data-c-color="white">
-                    <nav
-                        aria-label="breadcrumb"
-                        data-c-breadcrumbs>
+                    <nav aria-label="breadcrumb" data-c-breadcrumbs>
                         <ol>
                             <li>
-                                <a
-                                    href="/"
-                                    title="This is the title of the page link.">
+                                <a href="/" title="This is the title of the page link.">
                                     Talent Cloud</a>
                                 <i class="material-icons">arrow_right</i>
                             </li>
@@ -76,11 +48,10 @@
                 </div>
             </div>
         </header>
-
         <div>
             <div data-c-container="large">
                 <div data-c-grid="gutter">
-                    <div data-c-grid-item="tl(1of4)" class="sidebar-wrapper">
+                    <div data-c-grid-item="tl(1of4) ds(1of5)" class="sidebar-wrapper">
                         <div class="sidebar" data-c-padding="tb(triple)">
                             <span data-c-font-weight="bold" data-c-font-size="h4">My Account</span>
                             <nav data-c-margin="top(normal)">
@@ -93,7 +64,7 @@
                             </nav>
                         </div>
                     </div>
-                    <div data-c-grid-item="tl(3of4)">
+                    <div data-c-grid-item="tl(3of4) ds(4of5)">
                         <div data-c-container="medium" data-c-padding="bottom(triple)">
                             <h2 data-c-margin="bottom(normal)" data-c-padding="top(triple)" data-c-font-size="h2" id="personal">Personal Information</h2>
                             <p data-c-margin="bottom(double)">This information is used to identify you on the platform.</p>
@@ -102,7 +73,7 @@
                                     <label for="TI2">My First Name</label>
                                     <span>Required</span>
                                     <div>
-                                        <input id="TI2" placeholder="e.g. Clark" required type="text" />
+                                        <input id="TI2" placeholder="e.g. Clark" required type="text"/>
                                     </div>
                                     <span>This input has an error.</span>
                                 </div>
@@ -110,7 +81,7 @@
                                     <label for="TI2">My Last Name</label>
                                     <span>Required</span>
                                     <div>
-                                        <input id="TI2" placeholder="e.g. Kent" required type="text" />
+                                        <input id="TI2" placeholder="e.g. Kent" required type="text"/>
                                     </div>
                                     <span>This input has an error.</span>
                                 </div>
@@ -118,7 +89,7 @@
                                     <label for="EM2">My Username/Email</label>
                                     <span>Required</span>
                                     <div>
-                                        <input id="EM2" placeholder="e.g. bruce@waynefoundation.com" required type="email" />
+                                        <input id="EM2" placeholder="e.g. bruce@waynefoundation.com" required type="email"/>
                                     </div>
                                     <span>This input has an error.</span>
                                 </div>
@@ -131,28 +102,23 @@
                             <h2 data-c-margin="bottom(normal)" data-c-padding="top(triple)" data-c-font-size="h2" id="goc">Government of Canada Information</h2>
                             <p data-c-margin="bottom(normal)">This information is used to identify your role within the Government of Canada on the manager and HR adviser portals.</p>
                             <div data-c-grid="gutter">
-                                <div data-c-grid-item="base(1of1)">
+                                <div
+                                    data-c-grid-item="base(1of1)">
                                     <!-- Alerts can have three arguments: information, warning, error. You can also include the toast argument on any of these types to fix the alert to the bottom right of the viewport. e.g. information(toast) -->
-                                    <div
-                                        data-c-alert="information"
-                                        data-c-radius="rounded"
-                                        role="alert"
-                                        data-c-margin="bottom(normal)">
-                                        <div data-c-padding="half">
+                                    <div data-c-alert="information" data-c-radius="rounded" role="alert" data-c-margin="bottom(normal)">
+                                        <div
+                                            data-c-padding="half">
                                             <!-- This title/icon span is optional. -->
-                                            <p
-                                                data-c-margin="bottom(half)"
-                                                data-c-heading="h5"
-                                                data-c-font-weight="bold">
-                                                <i
-                                                    aria-hidden="true"
-                                                    class="material-icons">
+                                            <p data-c-margin="bottom(half)" data-c-heading="h5" data-c-font-weight="bold">
+                                                <i aria-hidden="true" class="material-icons">
                                                     report_problem
                                                 </i>
                                                 My current department: Treasury Board of Canada Secretariat
                                             </p>
                                             <p data-c-margin="bottom(half)">
-                                                In order to change your department, you'll need to <a href="" title="">contact Talent Cloud</a> directly.
+                                                In order to change your department, you'll need to
+                                                <a href="" title="">contact Talent Cloud</a>
+                                                directly.
                                             </p>
                                             <p>We require you to get in touch because your department determines how you interact with job posters, applicants, and HR advisers. In order to have this information changed, we need to verify your department independently of the platform.</p>
                                         </div>
@@ -162,7 +128,7 @@
                                     <label for="EM2">My Government Email</label>
                                     <span>Required</span>
                                     <div>
-                                        <input id="EM2" placeholder="e.g. bruce@waynefoundation.com" required type="email" />
+                                        <input id="EM2" placeholder="e.g. bruce@waynefoundation.com" required type="email"/>
                                     </div>
                                     <span>This input has an error.</span>
                                 </div>
@@ -185,7 +151,7 @@
                                     <label for="p2">My Current Password</label>
                                     <span>Required</span>
                                     <div>
-                                        <input id="p2" required type="password" />
+                                        <input id="p2" required type="password"/>
                                         <button type="button">
                                             <i class="material-icons">
                                                 visibility
@@ -201,7 +167,7 @@
                                     <label for="p2">My New Password</label>
                                     <span>Required</span>
                                     <div>
-                                        <input id="p2" required type="password" />
+                                        <input id="p2" required type="password"/>
                                         <button type="button">
                                             <i class="material-icons">
                                                 visibility
@@ -217,7 +183,7 @@
                                     <label for="p2">Repeat New Password</label>
                                     <span>Required</span>
                                     <div>
-                                        <input id="p2" required type="password" />
+                                        <input id="p2" required type="password"/>
                                         <button type="button">
                                             <i class="material-icons">
                                                 visibility
@@ -240,7 +206,9 @@
                             
     <div data-c-grid="gutter middle">
         <div data-c-grid-item="tp(1of2)" data-c-align="base(center) tp(left)">
-            <p data-c-font-size="h4" data-c-font-weight="bold">2-factor Status: <span data-c-color="stop">OFF</span></p>
+            <p data-c-font-size="h4" data-c-font-weight="bold">2-factor Status:
+                <span data-c-color="stop">OFF</span>
+            </p>
         </div>
         <div data-c-grid-item="tp(1of2)" data-c-align="base(center) tp(right)">
             <button data-c-button="outline(c1)" data-c-radius="rounded" data-c-dialog-id="example-dialog-01" data-c-dialog-action="open" type="button">
@@ -248,42 +216,18 @@
             </button>
         </div>
     </div>
-
     <div data-c-dialog-overlay></div>
-
-    <div
-        aria-hidden="true"
-        aria-describedby="example-dialog-01-description"
-        aria-labelledby="example-dialog-01-title"
-        data-c-dialog
-        data-c-dialog-id="example-dialog-01"
-        data-c-padding="top(double) bottom(double)"
-        role="dialog">
-        <div
-            data-c-background="white(100)"
-            data-c-radius="rounded">
-            <div
-                data-c-padding="tb(normal) right(triple) left(normal)"
-                data-c-border="bottom(thin, solid, black)"
-                data-c-background="c1(100)">
-                <h5
-                    data-c-font-size="h4"
-                    id="example-dialog-01-title"
-                    data-c-dialog-focus
-                    data-c-color="white">
+    <div aria-hidden="true" aria-describedby="example-dialog-01-description" aria-labelledby="example-dialog-01-title" data-c-dialog data-c-dialog-id="example-dialog-01" data-c-padding="top(double) bottom(double)" role="dialog">
+        <div data-c-background="white(100)" data-c-radius="rounded">
+            <div data-c-padding="tb(normal) right(triple) left(normal)" data-c-border="bottom(thin, solid, black)" data-c-background="c1(100)">
+                <h5 data-c-font-size="h4" id="example-dialog-01-title" data-c-dialog-focus data-c-color="white">
                     Turn 2-factor Authentication On
                 </h5>
-                <button
-                    data-c-dialog-action="close"
-                    data-c-dialog-id="example-dialog-01"
-                    type="button"
-                    data-c-color="white">
+                <button data-c-dialog-action="close" data-c-dialog-id="example-dialog-01" type="button" data-c-color="white">
                     <i class="material-icons">close</i>
                 </button>
             </div>
-            <div
-                data-c-border="bottom(thin, solid, black)"
-                data-c-padding="normal">
+            <div data-c-border="bottom(thin, solid, black)" data-c-padding="normal">
                 <div id="example-dialog-01-description">
                     <p data-c-margin="bottom(normal)">You're about to turn 2-factor authentication on for your account. Please download an app such as Google Authenticator or Authy and scan the QR code below. The following recovery codes can also be used to sign into your account once, which will then render that specific code void. Please keep these codes stored in a safe place.</p>
                     <div data-c-grid="gutter middle">
@@ -308,22 +252,12 @@
             <div data-c-padding="normal">
                 <div data-c-grid="gutter middle">
                     <div data-c-grid-item="base(1of2)">
-                        <button
-                            data-c-button="outline(slow)"
-                            data-c-radius="rounded"
-                            data-c-dialog-action="close"
-                            data-c-dialog-id="example-dialog-01">
+                        <button data-c-button="outline(slow)" data-c-radius="rounded" data-c-dialog-action="close" data-c-dialog-id="example-dialog-01">
                             Cancel
                         </button>
                     </div>
-                    <div
-                        data-c-grid-item="base(1of2)"
-                        data-c-alignment="base(right)">
-                        <a
-                            data-c-button="solid(go)"
-                            data-c-radius="rounded"
-                            title=""
-                            href="/auth-interim.html#auth">
+                    <div data-c-grid-item="base(1of2)" data-c-alignment="base(right)">
+                        <a data-c-button="solid(go)" data-c-radius="rounded" title="" href="/auth-interim.html#auth">
                             Turn On
                         </a>
                     </div>
@@ -337,19 +271,14 @@
                 </div>
             </div>
         </div>
-
         <footer data-c-background="black(100)" data-c-padding="tb(triple)">
             <div data-c-container="large" data-c-align="base(center)">
                 <p data-c-color="white" data-c-font-weight="bold" data-c-font-size="h3">FOOTER</p>
             </div>
         </footer>
-
         
         <script src="js/clone/clone.min.js"></script>
-
         
         <script src="js/app.js"></script>
-
     </body>
-
 </html>

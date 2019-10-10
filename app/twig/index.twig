@@ -1,9 +1,10 @@
 {% extends "templates/layout.twig" %}
-
 {% block auth %}
     <div data-c-grid="gutter middle">
         <div data-c-grid-item="tp(1of2)" data-c-align="base(center) tp(left)">
-            <p data-c-font-size="h4" data-c-font-weight="bold">2-factor Status: <span data-c-color="stop">OFF</span></p>
+            <p data-c-font-size="h4" data-c-font-weight="bold">2-factor Status:
+                <span data-c-color="stop">OFF</span>
+            </p>
         </div>
         <div data-c-grid-item="tp(1of2)" data-c-align="base(center) tp(right)">
             <button data-c-button="outline(c1)" data-c-radius="rounded" data-c-dialog-id="example-dialog-01" data-c-dialog-action="open" type="button">
@@ -11,42 +12,18 @@
             </button>
         </div>
     </div>
-
     <div data-c-dialog-overlay></div>
-
-    <div
-        aria-hidden="true"
-        aria-describedby="example-dialog-01-description"
-        aria-labelledby="example-dialog-01-title"
-        data-c-dialog
-        data-c-dialog-id="example-dialog-01"
-        data-c-padding="top(double) bottom(double)"
-        role="dialog">
-        <div
-            data-c-background="white(100)"
-            data-c-radius="rounded">
-            <div
-                data-c-padding="tb(normal) right(triple) left(normal)"
-                data-c-border="bottom(thin, solid, black)"
-                data-c-background="c1(100)">
-                <h5
-                    data-c-font-size="h4"
-                    id="example-dialog-01-title"
-                    data-c-dialog-focus
-                    data-c-color="white">
+    <div aria-hidden="true" aria-describedby="example-dialog-01-description" aria-labelledby="example-dialog-01-title" data-c-dialog data-c-dialog-id="example-dialog-01" data-c-padding="top(double) bottom(double)" role="dialog">
+        <div data-c-background="white(100)" data-c-radius="rounded">
+            <div data-c-padding="tb(normal) right(triple) left(normal)" data-c-border="bottom(thin, solid, black)" data-c-background="c1(100)">
+                <h5 data-c-font-size="h4" id="example-dialog-01-title" data-c-dialog-focus data-c-color="white">
                     Turn 2-factor Authentication On
                 </h5>
-                <button
-                    data-c-dialog-action="close"
-                    data-c-dialog-id="example-dialog-01"
-                    type="button"
-                    data-c-color="white">
+                <button data-c-dialog-action="close" data-c-dialog-id="example-dialog-01" type="button" data-c-color="white">
                     <i class="material-icons">close</i>
                 </button>
             </div>
-            <div
-                data-c-border="bottom(thin, solid, black)"
-                data-c-padding="normal">
+            <div data-c-border="bottom(thin, solid, black)" data-c-padding="normal">
                 <div id="example-dialog-01-description">
                     <p data-c-margin="bottom(normal)">You're about to turn 2-factor authentication on for your account. Please download an app such as Google Authenticator or Authy and scan the QR code below. The following recovery codes can also be used to sign into your account once, which will then render that specific code void. Please keep these codes stored in a safe place.</p>
                     <div data-c-grid="gutter middle">
@@ -71,22 +48,12 @@
             <div data-c-padding="normal">
                 <div data-c-grid="gutter middle">
                     <div data-c-grid-item="base(1of2)">
-                        <button
-                            data-c-button="outline(slow)"
-                            data-c-radius="rounded"
-                            data-c-dialog-action="close"
-                            data-c-dialog-id="example-dialog-01">
+                        <button data-c-button="outline(slow)" data-c-radius="rounded" data-c-dialog-action="close" data-c-dialog-id="example-dialog-01">
                             Cancel
                         </button>
                     </div>
-                    <div
-                        data-c-grid-item="base(1of2)"
-                        data-c-alignment="base(right)">
-                        <a
-                            data-c-button="solid(go)"
-                            data-c-radius="rounded"
-                            title=""
-                            href="/auth-interim.html#auth">
+                    <div data-c-grid-item="base(1of2)" data-c-alignment="base(right)">
+                        <a data-c-button="solid(go)" data-c-radius="rounded" title="" href="/auth-interim.html#auth">
                             Turn On
                         </a>
                     </div>
