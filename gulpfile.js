@@ -12,6 +12,11 @@
 
 // URL Subdirectory ============================================================
 // This variable is designed to allow for proper relative links when publishing to a subdirectory or Github Pages. If you plan on publishing to Github Pages, set this variable to the name of your repository.
+// If this variable is used, it's important to leverage the $ROOT variable to ensure your assets and application links for properly when deployed.
+
+// $ROOT = /subdirectory..
+// href="$ROOT/img/image.jpg" = href="/subdirectory/img/image.jpg"
+
 let urlPrefix = "tc-account";
 
 // Requirements ================================================================
@@ -56,21 +61,18 @@ const twig = require('gulp-twig');
     }
     function replacePath() {
         return src('cache/**/*.html')
-        .pipe(replace('$ROOT', "/"))
-        .pipe(replace('$URL', ""))
+        .pipe(replace('$ROOT', ""))
         .pipe(dest('cache'));
     }
-    let rootPath = "/" + urlPrefix + "/";
-    let anchorPath = "/" + urlPrefix;
+    let rootPath = "/" + urlPrefix;
     function replaceDocsPath() {
         if (urlPrefix == "") {
             return src('cache/**/*.html')
-            .pipe(replace('$ROOT', "/"))
+            .pipe(replace('$ROOT', ""))
             .pipe(dest('cache'));
         } else {
             return src('cache/**/*.html')
             .pipe(replace('$ROOT', rootPath))
-            .pipe(replace('$URL', anchorPath))
             .pipe(dest('cache'));
         }
     }
