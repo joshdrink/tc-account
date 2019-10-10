@@ -60,7 +60,8 @@ const twig = require('gulp-twig');
         .pipe(replace('$URL', ""))
         .pipe(dest('cache'));
     }
-    let rootPath = "/" + urlPrefix;
+    let rootPath = "/" + urlPrefix + "/";
+    let anchorPath = "/" + urlPrefix;
     function replaceDocsPath() {
         if (urlPrefix == "") {
             return src('cache/**/*.html')
@@ -69,7 +70,7 @@ const twig = require('gulp-twig');
         } else {
             return src('cache/**/*.html')
             .pipe(replace('$ROOT', rootPath))
-            .pipe(replace('$URL', rootPath))
+            .pipe(replace('$URL', anchorPath))
             .pipe(dest('cache'));
         }
     }
