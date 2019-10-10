@@ -31,76 +31,60 @@ const twig = require('gulp-twig');
 // Tasks =======================================================================
 
     // Browser Sync
-    let urlPath = "";
-    if (urlPrefix == "") {
-        urlPath = "cache/";
-    } else {
-        urlPath = "cache/" + urlPrefix + "/";
-    }
     function browserSync(done) {
-        if (urlPrefix == "") {
-            browsersync.init({
-                server: {
-                    baseDir: "cache"
-                },
-            });
-            done();
-        } else {
-            browsersync.init({
-                server: {
-                    baseDir: "cache/" + urlPrefix
-                }
-            });
-            done();
-        }
+        browsersync.init({
+            server: {
+                baseDir: "cache"
+            },
+        });
+        done();
     };
 
     // BrowserSync Reload
     function browserSyncReload(done) {
-        return src(urlPath + '*.html')
+        return src('cache/*.html')
         .pipe(browsersync.reload({
             stream: true
         }));
     }
 
     // Twig
-    let rootPath = "/" + urlPrefix;
     function template() {
-        return src('app/twig/*.twig')
+        return src('app/twig/**/index.twig')
         .pipe(twig())
-        .pipe(dest(urlPath));
+        .pipe(dest('cache'));
     }
     function replacePath() {
         if (urlPrefix == "") {
             // Do Nothing
         } else {
-            return src(urlPath + '*.html')
+            return src('cache/**/*.html')
             .pipe(replace('$URL', ""))
-            .pipe(dest(urlPath));
+            .pipe(dest('cache'));
         }
     }
+    let rootPath = "/" + urlPrefix;
     function replaceDocsPath() {
         if (urlPrefix == "") {
-            return src(urlPath + '*.html')
-            .pipe(dest(urlPath));
+            // Do Nothing
         } else {
-            return src(urlPath + '*.html')
+            return src('cache/**/*.html')
             .pipe(replace('$URL', rootPath))
-            .pipe(dest(urlPath));
+            .pipe(dest('cache'));
         }
     }
 
     // Clone JS
     function moveCloneJS() {
         return src('node_modules/clone-framework/dist/js/clone.min.js')
-        .pipe(dest(urlPath + 'js/clone'));
+        .pipe(dest('cache/js/clone'));
     }
 
     // JavaScript
     function js() {
-        return src('app/js/*.js')
+        return src('app/js/**/*.js')
         .pipe(concat('app.js'))
-        .pipe(dest(urlPath + 'js'));
+        .pipe(dest('cache/js'));
     }
 
     // Sass
@@ -108,38 +92,34 @@ const twig = require('gulp-twig');
         return src('app/scss/**/*.scss')
         .pipe(sass())
         .pipe(postcss([autoprefixer()]))
-        .pipe(dest(urlPath + 'css'));
+        .pipe(dest('cache/css'));
     }
 
     // Images
     function cacheImages() {
         return src('app/img/**/*')
-        .pipe(dest(urlPath + 'img'));
+        .pipe(dest('cache/img'));
     }
 
     function moveImages() {
-        return src(urlPath + 'img/**/*')
+        return src('cache/img/**/*')
         .pipe(dest('docs/img'));
     }
 
     // Minification
     function docsCacheHTML() {
-        return src(urlPath + '**/*.html')
+        return src('cache/**/*.html')
         .pipe(dest('docs'));
     }
     function docsCacheJS() {
-        return src(urlPath + 'js/*.js')
+        return src('cache/js/**/*.js')
         .pipe(uglify())
         .pipe(dest('docs/js'));
     }
     function docsCacheCSS() {
-        return src(urlPath + 'css/*.css')
+        return src('cache/css/**/*.css')
         .pipe(postcss([cssnano()]))
         .pipe(dest('docs/css'));
-    }
-    function docsCloneJS() {
-        return src(urlPath + 'js/clone/*.js')
-        .pipe(dest('docs/js/clone'));
     }
     function docsFavicons() {
         return src('app/favicons/*')
@@ -159,9 +139,9 @@ const twig = require('gulp-twig');
     // Compile
     const compile = series(cleanCache, template, replacePath, moveCloneJS, js, cacheImages, compileCSS);
 
-    // docs
+    // Docs
     const docsCompile = series(cleanCache, template, replaceDocsPath, moveCloneJS, js, cacheImages, compileCSS);
-    const docs = series(docsCacheHTML, docsCacheJS, docsCacheCSS, docsCloneJS, moveImages, docsFavicons);
+    const docs = series(docsCacheHTML, docsCacheJS, docsCacheCSS, moveImages, docsFavicons);
 
     // Watch
     function watchFiles() {
