@@ -15,7 +15,8 @@
 // If this variable is used, it's important to leverage the $ROOT variable to ensure your assets and application links for properly when deployed.
 
 // $ROOT = /subdirectory..
-// href="$ROOT/img/image.jpg" = href="/subdirectory/img/image.jpg"
+// e.g. <link async href="$ROOT/css/app.css" rel="stylesheet"> turns into <link async href="/subdirectory/css/app.css" rel="stylesheet">
+// href="$ROOT/img/image.jpg" turns into href="/subdirectory/img/image.jpg"
 
 let urlPrefix = "tc-account";
 
@@ -103,6 +104,10 @@ const twig = require('gulp-twig');
         return src('app/img/**/*')
         .pipe(dest('cache/img'));
     }
+    function favicons() {
+        return src('app/favicons/*')
+        .pipe(dest('cache'));
+    }
 
     function moveImages() {
         return src('cache/img/**/*')
@@ -140,7 +145,7 @@ const twig = require('gulp-twig');
     }
 
     // Compile
-    const compile = series(cleanCache, template, replacePath, moveCloneJS, js, cacheImages, compileCSS);
+    const compile = series(cleanCache, template, replacePath, moveCloneJS, js, cacheImages, compileCSS, favicons);
 
     // Docs
     const docsCompile = series(cleanCache, template, replaceDocsPath, moveCloneJS, js, cacheImages, compileCSS);
