@@ -55,20 +55,20 @@ const twig = require('gulp-twig');
         .pipe(dest('cache'));
     }
     function replacePath() {
-        if (urlPrefix == "") {
-            // Do Nothing
-        } else {
-            return src('cache/**/*.html')
-            .pipe(replace('$URL', ""))
-            .pipe(dest('cache'));
-        }
+        return src('cache/**/*.html')
+        .pipe(replace('$ROOT', "/"))
+        .pipe(replace('$URL', ""))
+        .pipe(dest('cache'));
     }
     let rootPath = "/" + urlPrefix;
     function replaceDocsPath() {
         if (urlPrefix == "") {
-            // Do Nothing
+            return src('cache/**/*.html')
+            .pipe(replace('$ROOT', "/"))
+            .pipe(dest('cache'));
         } else {
             return src('cache/**/*.html')
+            .pipe(replace('$ROOT', rootPath))
             .pipe(replace('$URL', rootPath))
             .pipe(dest('cache'));
         }
@@ -147,7 +147,8 @@ const twig = require('gulp-twig');
     function watchFiles() {
         watch('app/scss/**/*.scss', series(compile, browserSyncReload));
         watch('app/twig/**/*.twig', series(compile, browserSyncReload));
-        watch('app/js/*.js', series(compile, browserSyncReload));
+        watch('app/js/**/*.js', series(compile, browserSyncReload));
+        watch('app/img/**/*.js', series(compile, browserSyncReload));
     }
 
     // Export
